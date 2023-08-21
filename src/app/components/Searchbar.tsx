@@ -8,7 +8,7 @@ export default function Searchbar({
 }: {
   setSearchQuery: Dispatch<SetStateAction<string>>;
 }) {
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userQuery = query.split(' ').join('%20');
     setSearchQuery(userQuery);
