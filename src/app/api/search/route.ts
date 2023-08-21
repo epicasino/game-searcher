@@ -7,3 +7,6 @@ export async function POST(req: Request) {
 
   return new Response(JSON.stringify(data))
 }
+
+// Link to API Docs for Game Search API
+// https://api.rawg.io/docs/
