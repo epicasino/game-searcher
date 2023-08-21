@@ -1,12 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Image from 'next/image';
 
-export default function Searchbar() {
-  const handleSubmit = async (e) => {
+export default function Searchbar({
+  setSearchQuery,
+}: {
+  setSearchQuery: Dispatch<SetStateAction<string>>;
+}) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const userQuery = query.split(' ').join('%20');
+    setSearchQuery(userQuery);
   };
 
   const [query, setQuery] = useState('');
