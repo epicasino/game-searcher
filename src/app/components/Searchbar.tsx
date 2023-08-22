@@ -10,7 +10,7 @@ export default function Searchbar({
 }) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const userQuery = query.split(' ').join('%20');
+    const userQuery = query.trim().split(' ').join('%20');
     setSearchQuery(userQuery);
   };
 
@@ -27,7 +27,7 @@ export default function Searchbar({
         className="text-black w-full px-3"
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button type="submit" className=" bg-white">
+      <button type="submit" className="bg-white">
         <Image
           src="/magnify_glass.svg"
           width="24"

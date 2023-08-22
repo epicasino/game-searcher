@@ -25,5 +25,13 @@ export interface SearchDataResults {
   suggestions_count: number;
   updated: string;
   esrb_rating: object;
-  platforms: Array<object>;
+  platforms: Array<Platforms>;
+};
+
+export interface Platforms {
+  platform: {
+    id: number,
+    slug: string,
+    name: string
+  }
 };
