@@ -48,7 +48,7 @@ export default function Home() {
       {/* Ray: User's search results, conditional rendering */}
       {searchData?.results ? (
         <section className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-5 h-screen justify-items-center">
-          <h1 className="col-span-full text-4xl">
+          <h1 className="col-span-full text-4xl items-center">
             Search Result For: {userSearch}
           </h1>
           {/* Ray: searchData.results is an array of objects, map over each item in array */}
