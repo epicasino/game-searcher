@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* Ray: User's search results, conditional rendering */}
       {searchData?.results ? (
-        <section className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-5 h-screen justify-items-center">
+        <section className="bg-stone-900 grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-5 h-screen justify-items-center">
           <h1 className="col-span-full text-4xl items-center">
             Search Result For: {userSearch}
           </h1>
@@ -57,7 +57,9 @@ export default function Home() {
           ))}
         </section>
       ) : (
-        <></>
+        <section className="bg-stone-900 h-screen">
+          {/* Ray: TODO- Add a homescreen here */}
+        </section>
       )}
     </main>
   );

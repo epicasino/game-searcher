@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { SearchDataResults } from '../interfaces';
 
 export default function GameCard({ result }: { result: SearchDataResults }) {
-
   // console.log(result.platforms)
 
   if (result.rating !== 0) {
@@ -12,7 +11,7 @@ export default function GameCard({ result }: { result: SearchDataResults }) {
         className="w-full lg:w-2/3 px-5 py-10 grid grid-rows-6 bg-gray-900 rounded-md transition-colors hover:bg-gray-800 ease-in"
         data-id={result.id}
       >
-        {/* Ray: can turn into component... */}
+        {/* Ray: If the game info has a background image link, display here */}
         {result.background_image ? (
           <figure
             style={{
@@ -26,6 +25,7 @@ export default function GameCard({ result }: { result: SearchDataResults }) {
             className="row-span-4"
           ></figure>
         ) : (
+          // Ray: TODO: Add placeholder image if no background image link is present.
           <></>
         )}
         <div className="text-center py-5 row-span-2">
@@ -37,12 +37,9 @@ export default function GameCard({ result }: { result: SearchDataResults }) {
           </h4>
           <p>
             {result.platforms.map((item) => {
-              const { platform } = item
-              return (
-              <small key={platform.id}>
-                {platform.name}{' '}
-              </small>
-            );})}
+              const { platform } = item;
+              return <small key={platform.id}>{platform.name} </small>;
+            })}
           </p>
         </div>
       </article>
